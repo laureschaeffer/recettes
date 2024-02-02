@@ -10,7 +10,8 @@ catch (Exception $e)
     die('Erreur : ' . $e->getMessage());
 }
 
-// requete SQL
+// -----------------------première requete SQL
+
 $sqlQuery= "SELECT *
 FROM RECETTE r
 INNER JOIN CATEGORIE c ON r.id_categorie = c.id_categorie
@@ -19,20 +20,31 @@ INNER JOIN INGREDIENT i ON e.id_ingredient = i.id_ingredient";
 $recetteStatement = $mysqlClient->prepare($sqlQuery);
 $recetteStatement->execute();
 $row = $recetteStatement->fetch(PDO::FETCH_ASSOC);
+$recipes = $recetteStatement->fetchAll(); 
 
-var_dump($row);
+// Afficher première requête SQL
 
-// echo $row['nom_recette'];
-// echo $row['nom_categorie'];
-// echo $row['temp_preparation'];
-// echo $row['instructions'];
+// foreach ($recipes as $recipe) {
 
-$sqlQuery2= "SELECT i.nom_ingredient
+// 	echo $recipe['nom_recette']." <br>";
+//     echo $recipe['nom_categorie']." <br>";
+//     echo $recipe['instructions']." <br>"; 
+//     echo $recipe['temp_preparation']." <br>";
+// }
+
+// --------------------------deuxième requête SQL
+
+echo $recipes[0]['nom_recette'];
+$sqlQuery2= "SELECT i.nom_ingredient, i.prix, i.unite_mesure
 FROM etape e
 INNER JOIN ingredient i ON e.id_ingredient = i.id_ingredient
-GROUP BY i.nom_ingredient";
+WHERE e.id_recette=8";
 $recetteStatement2 = $mysqlClient->prepare($sqlQuery2);
 $recetteStatement2->execute();
-$row2 = $recetteStatement2->fetchAll();
 
-var_dump($row2);
+while (($row = $recetteStatement2->fetch(PDO::FETCH_ASSOC)) !== false) {
+    echo $row['nom_ingredient']." ";
+    echo $row['prix']." ";
+    echo $row['unite_mesure']." ";
+
+}
