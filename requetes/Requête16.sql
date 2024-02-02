@@ -4,4 +4,4 @@ SELECT id_recette, nom_recette, temp_preparation
 FROM recette
 WHERE temp_preparation = (SELECT MIN(temp_preparation) FROM recette);
 
--- Salade césar et tomates mozzarella 15min
+-- sous-requête
