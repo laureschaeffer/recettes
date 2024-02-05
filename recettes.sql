@@ -71,8 +71,7 @@ CREATE TABLE IF NOT EXISTS `recette` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Listage des données de la table recettes.recette : ~1 rows (environ)
-INSERT INTO `recette` (`id_recette`, `nom_recette`, `instructions`, `temp_preparation`, `id_categorie`) VALUES
-	(1, 'exemple', 'balbal', 60, 1);
+
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
