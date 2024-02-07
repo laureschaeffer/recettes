@@ -35,7 +35,7 @@ while ($recipe = $recetteStatement->fetch(PDO::FETCH_ASSOC)) {
 $title = "Liste de toutes les recettes";
 $content= ob_get_clean();
 
-require_once "PDO-template.php";
+require_once "template.php";
 
 
 

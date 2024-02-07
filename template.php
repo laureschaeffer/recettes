@@ -10,8 +10,8 @@
 </head>
 <body>
     <nav>
-        <a href="PDO-Recette.php">Liste de toutes les recettes</a>
-        <a href="PDO-Ingredient.php">Detail recette poulet rôti</a>
+        <a href="recettes.php">Liste de toutes les recettes</a>
+        <a href="ingredients.php">Detail recette poulet rôti</a>
     </nav>
     <h1>
         <?=$title ?>

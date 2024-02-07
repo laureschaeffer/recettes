@@ -28,5 +28,5 @@ while ($row = $recetteStatement->fetch(PDO::FETCH_ASSOC)) {
 
 $title = "Ingrédients pour la recette poulet rôti";
 $content = ob_get_clean();
-require_once "PDO-template.php";
+require_once "template.php";
 ?>
